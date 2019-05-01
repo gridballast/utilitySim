@@ -1,5 +1,9 @@
 ### Overview
 
+ This repository contains simulation code for determining the impact of GridBallast controls on distribution voltage (gridballastVoltReg) and frequency (gridballastFreqReg).
+
+### gridballastVoltReg
+
  The purpose of this module is to track voltage across circuit nodes, determine if any nodes carry excess voltage, and then observe the effect gridballast devices have on voltage. Excess voltage can be defined as when the voltage on the node is more than 105% of rated voltage. For purposes of this simulation, nodes which exceed rated voltage are called 'offenders.' 
 
  The gridballastVoltReg module works by first simulating powerflow on a circuit with solar generation in GridLAB-D, and then tracking voltage on the circuit. The user can specify if gridballast is enabled or not. Gridballast functionality only exsists for waterheaters and ziploads. If gridballast devices are 'on,' waterheaters and ziploads will turn on based upon the voltage level affecting them. For more information how gridballast works, please see [gridballast.com](http://www.gridballast.com).
@@ -12,9 +16,12 @@
 
  gridballastVoltReg includes functionality for conventional utility scale solar, and distributed solar electricity generation such as rooftop solar. The motivation behind this module is to ensure that the installation of conventional utility solar OR rooftop solar will not cause undue voltage issues, and if it does, determines if a gridballast device can help reduce excess voltage. 
 
+### gridballastFreqReg
+
+ Code is available in the gridballastFreqReg folder. Please see admin@gridballast.com for documentation.
+
 ### Requirements
 
-gridballastVoltReg requires the following:
 - python 2.7
 - python packages json, argparse, pandas, numpy, csv, re, and datetime.
 - the python packages can be installed via the command terminal `pip install <package_name>`
@@ -23,7 +30,7 @@ gridballastVoltReg requires the following:
 
 ### Usage
 
-To install gridballastVoltReg, please git pull this repository. Or you can download the files in [a .zip here](https://github.com/gridballast/utilitySimGb/archive/master.zip).
+To install, please git clone this repository. Or you can download the files in [a .zip here](https://github.com/gridballast/utilitySimGb/archive/master.zip).
 
 To run, simply open a terminal in the gridballastVoltReg directory and type in your terminal `python voltControlUtilityScale.py <path_to_omd> <gridballast status ('on' or 'off')> <keep files (True/False)>` for utility scale simulation. For the distributed solar case `python voltControlUtilityScale.py <path_to_omd> <gridballast status, ('on' or 'off')> <(rooftop solar size in square feet)> <keep files (True/False)>`
 
