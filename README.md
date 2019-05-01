@@ -16,10 +16,10 @@
 
 gridballastVoltReg requires the following:
 - python 2.7
-- gridballast enabled GridLAB-D binary, found at https://github.com/gridballast/utilitySimGB/tree/feature/730
-- python packages json, argparse, pandas, numpy, csv, open modeling framework (omf), re, and datetime.
+- python packages json, argparse, pandas, numpy, csv, re, and datetime.
 - the python packages can be installed via the command terminal `pip install <package_name>`
-- The open modeling framework from https://github.com/dpinney/omf this contains the necessary solver libraries and gridlabd to run simulations
+- The open modeling framework from https://github.com/dpinney/omf: this contains the necessary solver libraries and gridlabd to run simulations
+- Optional: gridballast enabled GridLAB-D binary for non-macOS platforms, found at https://github.com/gridballast/gridlabGb
 
 ### Usage
 
@@ -34,7 +34,6 @@ You will know the simulation is working correctly when you see the GridLAB-D out
 The simulation should yield an output similair to what is below. These are the results of the GridLAB-D simulation, but the overall module is far from finished. 
 
 ![](gld_results.png)
-
 
 Eventually a window will pop up in your web browswer which will look similair to what is below. This is a visual model of your circuit. 
 
